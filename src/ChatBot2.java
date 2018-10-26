@@ -2,16 +2,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * A program to carry on conversations with a human user.
+ * A program to carry on conversations with a human user. Nusrat
  * This version:
  * @author Brooklyn Tech CS Department
  * @version September 2018
  */
-public class ChatBot2
+public class ChatBot1
 {
 	//emotion can alter the way our bot responds. Emotion can become more negative or positive over time.
 	int emotion = 0;
-
 
 	/**
 	 * Runs the conversation for this particular chatbot, should allow switching to other chatbots.
@@ -20,6 +19,7 @@ public class ChatBot2
 	public void chatLoop(String statement)
 	{
 		Scanner in = new Scanner (System.in);
+
 		System.out.println (getGreeting());
 
 
@@ -53,12 +53,15 @@ public class ChatBot2
 	 */
 	public String getResponse(String statement)
 	{
-		String response = "";
+		String response = " ";
 		
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
+
+
 		}
+
 
 		else if (findKeyword(statement, "no") >= 0)
 		{
@@ -68,7 +71,17 @@ public class ChatBot2
 		
 		else if (findKeyword(statement, "levin") >= 0)
 		{
-			response = "More like LevinTheDream amiright?";
+			response = "More like LevinTheDream, amiright? Hahaha";
+			emotion++;
+		}
+		else if (findKeyword(statement, "folwell") >= 0)
+		{
+			response = "Watch your backpacks, Mr. Folwell doesn't fall well. Hahaha";
+			emotion++;
+		}
+		else if (findKeyword(statement, "goldman") >= 0)
+		{
+			response = "Go for the gold, man. Hahaha";
 			emotion++;
 		}
 
@@ -80,7 +93,7 @@ public class ChatBot2
 		else if (findKeyword(statement, "I want",0) >= 0)
 		{
 			response = transformIWantStatement(statement);
-		}	
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -266,9 +279,19 @@ public class ChatBot2
 			"You don't say.",
 			"It's all boolean to me.",
 			"So, would you like to go for a walk?",
-			"Could you say that again?"
-	};
+			"Could you say that again?",
+			"Would you like to?"};
 	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
 	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
-	
+    private void getRandomResponseWhenasked()
+    {
+        String randomNeutralResponses= "So What exactly is that, or how would you explain this situation";
+        //if (ppl.known()) {
+            //System.out.println("HI" + namer+ "Good to see you again!");
+        }
+        //else {
+            //System.out.println ("I don't think we have met before");
+            //System.out.println ("if uit is groppling again  then i m");
+
 }
+
